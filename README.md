@@ -24,6 +24,16 @@ We checked our program for memory leaks using `vagrant`, and none were found.
 
 We are implementing our cache using the `std::unordered_map` data structure which is a built in hash table inside the C++ STL. To understand the utility of different variables and functions, we refer you to the source file inside the `cache_lib.cc` file. Everything has been explained in detail.
 
+
+# Performance
+
+
+# Collision Resolution
+
+# Dynamic Resizing
+
+# Eviction Policy (FIFO)
+
 # Testing
 
  Refer to the source file  `test_cache_lib.cc` for additional comments. We are using the assert statement for testing purposes. 
@@ -43,12 +53,3 @@ We cannot use asserts in this test because the unordered map is a private data m
 ## FIFO Evictor Test
 
 Tests the functionality of the fifo eviction policy. We use an `std::queue` as our implementation of the `fifo_eviction` policy. For further comments about what tests we are using refer to the source file `test_cache_lib.cc` again. 
-
-# Performance
-
-
-# Collision Resolution
-
-# Dynamic Resizing
-
-# Eviction Policy (FIFO)
