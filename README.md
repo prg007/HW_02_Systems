@@ -38,7 +38,7 @@ Tests the functionality of passing custom hash functions into the cache. We test
 
 We cannot use asserts in this test because the unordered map is a private data member of the cache. So, in order to check that the hash functions are working properly we print out the bucket each key is in using the `umap.bucket(key)` method and the total no. of buckets using `umap.bucket_count()`. If they are working correctly we should get the screenshot below which we do. For further comments as to how the tests work, refer to the source file. 
 
-<img src = "https://github.com/prg007/HW_02_Systems/blob/master/hashtest.PNG" width = "200" height = "200"/>
+<img src = "https://github.com/prg007/HW_02_Systems/blob/master/hashtest.PNG" width = "400" height = "500"/>
 
 
 
