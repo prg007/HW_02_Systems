@@ -53,7 +53,7 @@ A **constant hasher** which just returns 1 regardless of what key we pass in. A 
 
 We cannot use asserts in this test because the unordered map is a private data member of the cache. So, in order to check that the hash functions are working properly we print out the bucket each key is in using the `umap.bucket(key)` method and the total no. of buckets using `umap.bucket_count()`. If they are working correctly we should get the screenshot below which we do. For further comments as to how the tests work and the meaning of the screenshot, refer to the source file. 
 
-<img src = "https://github.com/prg007/HW_02_Systems/blob/master/hashtest.PNG" width = "400" height = "500"/>
+<img src = "https://github.com/prg007/HW_02_Systems/blob/master/hashtest_1.PNG" width = "400" height = "500"/>
 
 ## FIFO Evictor Test
 
