@@ -40,7 +40,9 @@ We cannot use asserts in this test because the unordered map is a private data m
 
 <img src = "https://github.com/prg007/HW_02_Systems/blob/master/hashtest.PNG" width = "400" height = "500"/>
 
+## FIFO Evictor Test
 
+Tests the functionality of the fifo eviction policy. We use an `std::queue` as our implementation of the `fifo_eviction` policy. For further comments about what tests we are using refer to the source file `test_cache_lib.cc` again. 
 
 # Performance
 
