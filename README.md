@@ -36,6 +36,8 @@ Naive test simply tests the functionality of `get`, `set`, `del`,`space_used` an
 
 Tests the functionality of passing custom hash functions into the cache. We tested 3 different hash functions. A **constant hasher** which just returns 1 regardless of what key we pass in. A **mod** hasher which takes a string representation of an integer and returns mod 10 of the `stoi(key)`. Finally, the vanilla hash function i.e. the default `std::hash_function`. Refer to the source file to see what tests we came up with. 
 
+We cannot use asserts in this test because the unordered map is a private data member of the cache. So, in order to check that the hash functions are working properly we print out the bucket each key is in using the `umap.bucket(key)` method and the total no. of buckets using `umap.bucket_count()`. If they are working correctly we should get the screenshot below which we are. For further comments as to how the tests work, refer to the source file. 
+
 
 
 # Performance
