@@ -31,10 +31,12 @@ We allowed the `std::unordered_map` implementation to accept the hash function f
 
 # Collision Resolution
 
-To resolve collsions, we rely on `std::unordered_map` default collsion resolution policy. As it turns out, they use **separate chaining** to resolve collisions. More info here: [U_Map Collision Resolution Link](https://stackoverflow.com/questions/21518704/how-does-c-stl-unordered-map-resolve-collisions)
+To resolve collsions, we rely on `std::unordered_map` default collsion resolution policy. As it turns out, they use **separate chaining** to resolve collisions. More info here: [U_Map Collision Resolution Link](https://stackoverflow.com/questions/21518704/how-does-c-stl-unordered-map-resolve-collisions). 
 
 
 # Dynamic Resizing
+
+We implemented the max load factor by passing it to the unordered map from the cache constructor. The unordered map automatically resizes the umap/hash_table to accomodate the max load factor constraint when adding new key-value pairs. By default the max_load_factor is 0.75. Refer to the `hash_test()` function inside the file `test_cache_lib.cc` to see how we test this functionality. Also, refer to the **Hash Test** section inside **Testing** part of README for more details.
 
 # Eviction Policy (FIFO)
 
