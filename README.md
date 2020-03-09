@@ -10,6 +10,8 @@
 
 `fifo_evictor.hh`, `fifo_evictor.cc` - Interface and implementation of the fifo eviction policy.
 
+`LRU_evictor.hh`, `LRU_evictor.cc` - Interface and implementation of the LRU eviction policy.
+
 `test_cache_lib.cc` - Our test cases. Also the entry point into the main function.
 
 `Makefile` - Makefile!
@@ -42,6 +44,12 @@ We implemented the max load factor by passing it to the unordered map from the c
 
 For our FIFO eviction policy we use the `std::queue` implementation. Note that whenever we get or set a key, we add that key to the  queue. Whenever we evict something from the queue we dequeue it and return to the caller. Both of these operations are constant time. Refer to the **FIFO EVICTOR Test** inside the **Testing** section part of the README for more details. 
 
+# Eviction Policy (LRU)
+
+We are implemeting the LRU evictor test using `std::list` and `std::unordered_map`. The list holds all the keys with the most recently used ones at the front of the queue and the least recently used ones at the back of the queue. The unordered map is a key-value pair of keys pointing to their corresponding list iterators. This ensures O(1) removal and search for keys. Also, note that space used is O(n) because we are only modifying and appending (n+n = 2n) i.e.  O(n) number of keys. 
+
+Refer to the file for more implementation comments. 
+
 # Testing
 
  Refer to the source file  `test_cache_lib.cc` for additional comments. We are using the assert statement for testing purposes.  
@@ -65,3 +73,7 @@ We cannot use asserts in this test because the unordered map is a private data m
 ## FIFO Evictor Test
 
 Tests the functionality of the fifo eviction policy. We use an `std::queue` as our implementation of the `fifo_eviction` policy. For further comments about what tests we are using refer to the source file `test_cache_lib.cc` again and the `fifo_evictor_test`
+
+## LRU Evictor Test
+
+ 
