@@ -49,13 +49,13 @@ For our FIFO eviction policy we use the `std::queue` implementation. Note that w
 
 # Eviction Policy (LRU)
 
-We are implemeting the LRU evictor test using `std::list` and `std::unordered_map`. The list holds all the keys with the most recently used ones at the front of the queue and the least recently used ones at the back of the queue. The unordered map is a key-value pair of keys pointing to their corresponding list iterators. This ensures O(1) removal and search for keys. Also, note that space used is O(n) because we are only modifying and appending (n+n = 2n) i.e.  O(n) number of keys. 
+We are implemeting the LRU evictor test using `std::list` and `std::unordered_map`. The list holds all the keys with the most recently used ones at the front of the list and the least recently used ones at the back of the list (basically acting as a queue). The unordered map is a key-value map where keys map to their corresponding list iterators. This ensures O(1) time for removing a single key from the list, and O(1) search for keys through the hash map. Also, note that space used is O(n) because we are only dealing with n+n = 2n = O(n) keys in the list and hash map, where n is the number of keys in the cache. Our implementation does not affect any of the existing interface/implementation.
 
-Refer to the file for more implementation comments. 
+Refer to the source file `LRU_evictor.cc` and `LRU_evictor.hh` for more implementation comments. 
 
 # Testing
 
- Refer to the source file  `test_cache_lib.cc` for additional comments. We are using the assert statement for testing purposes.  
+Refer to the source file  `test_cache_lib.cc` for additional comments. We are using the assert statement for testing purposes.  
  
 ## Naive Test
 
