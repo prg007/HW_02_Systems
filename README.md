@@ -20,7 +20,10 @@
 # How to run
 To compile and run, just type `make` and then `./test`. You may have to change the compiler version in the CXX variable to match the compiler on your computer.
 **We highly suggest running it on the Linux Virtual Machine.**
-We checked our program for memory leaks using `vagrant`, and none were found.
+
+**We checked our program for memory leaks using `vagrant`, and none were found.**
+`valgrind --leak-check=yes ./test`
+
 
 # Basic Cache Operations
 
@@ -54,8 +57,6 @@ Refer to the file for more implementation comments.
 
  Refer to the source file  `test_cache_lib.cc` for additional comments. We are using the assert statement for testing purposes.  
  
-
- 
 ## Naive Test
 
 Naive test simply tests the functionality of `get`, `set`, `del`,`space_used` and `reset` methods which assumes the default eviction policy i.e. `nullptr`. Refer to the source file to see what tests we came up with. 
@@ -72,8 +73,6 @@ We cannot use asserts in this test because the unordered map is a private data m
 
 ## FIFO Evictor Test
 
-Tests the functionality of the fifo eviction policy. We use an `std::queue` as our implementation of the `fifo_eviction` policy. For further comments about what tests we are using refer to the source file `test_cache_lib.cc` again and the `fifo_evictor_test`
-
+Tests the functionality of the fifo eviction policy. We use an `std::queue` as our implementation of the `fifo_eviction` policy. For further comments about what tests we are using refer to the source file `test_cache_lib.cc` again.
 ## LRU Evictor Test
-
- 
+ Tests the functionality of the LRU eviction policy. 
