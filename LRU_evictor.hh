@@ -7,8 +7,6 @@ using namespace std;
 class LRUEvictor : public Evictor
 {
   private:
-    // We use two hash tables as our implementation
-
     //LRU vec is a list where the most recently used is at the front of the list, and the least recently used is at the back.
     list<key_type> LRU_vec;
 
