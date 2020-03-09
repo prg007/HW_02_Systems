@@ -27,9 +27,12 @@ We are implementing our cache using the `std::unordered_map` data structure whic
 
 # Performance
 
-We allowed the `std::unordered_map` implementation to accept the hash function from the hash constructor. 
+We allowed the `std::unordered_map` implementation to accept the hash function from the Cache constructor. If the user passes `nullptr` as the hash function, then we default to `std::hash` just like the default parameter. Since `u_map` is a STL hash table, all operations run in asymptotic constant time. In our test cases we create custom hash functions using `std::function`. Go to the testing section of this README for more details about this.  
 
 # Collision Resolution
+
+To resolve collsions, we rely on `std::unordered_map` default collsion resolution policy. As it turns out, they use **separate chaining** to resolve collisions. More info here: [U_Map Collision Resolution Link](https://stackoverflow.com/questions/21518704/how-does-c-stl-unordered-map-resolve-collisions)
+
 
 # Dynamic Resizing
 
