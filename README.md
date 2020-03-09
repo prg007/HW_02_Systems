@@ -40,6 +40,8 @@ We implemented the max load factor by passing it to the unordered map from the c
 
 # Eviction Policy (FIFO)
 
+For our FIFO eviction policy we use the `std::queue` implementation. Note that whenever we get or set a key, we add that key to the  queue. Whenever we evict something from the queue we dequeue it and return to the caller. Both of these operations are constant time. Refer to the **FIFO EVICTOR Test** inside the **Testing** section part of the README for more details. 
+
 # Testing
 
  Refer to the source file  `test_cache_lib.cc` for additional comments. We are using the assert statement for testing purposes.  
@@ -62,4 +64,4 @@ We cannot use asserts in this test because the unordered map is a private data m
 
 ## FIFO Evictor Test
 
-Tests the functionality of the fifo eviction policy. We use an `std::queue` as our implementation of the `fifo_eviction` policy. For further comments about what tests we are using refer to the source file `test_cache_lib.cc` again. 
+Tests the functionality of the fifo eviction policy. We use an `std::queue` as our implementation of the `fifo_eviction` policy. For further comments about what tests we are using refer to the source file `test_cache_lib.cc` again and the `fifo_evictor_test`
