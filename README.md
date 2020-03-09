@@ -75,4 +75,4 @@ We cannot use asserts in this test because the unordered map is a private data m
 
 Tests the functionality of the fifo eviction policy. We use an `std::queue` as our implementation of the `fifo_eviction` policy. For further comments about what tests we are using refer to the source file `test_cache_lib.cc` again.
 ## LRU Evictor Test
- Tests the functionality of the LRU eviction policy. 
+ Tests the functionality of the LRU eviction policy. We refer you to the `test_cache_lib.cc` source file once again for details and comments about our test cases.
