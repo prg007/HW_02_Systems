@@ -21,7 +21,7 @@
 To compile and run, just type `make` and then `./test`. You may have to change the compiler version in the CXX variable to match the compiler on your computer.
 **We highly suggest running it on the Linux Virtual Machine.**
 
-**We checked our program for memory leaks using `vagrant`, and none were found.**
+**We checked our program for memory leaks using `valgrind`, and none were found.**
 `valgrind --leak-check=yes ./test`
 
 
